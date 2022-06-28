@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] bool isPlaceable;
+    
     void OnMouseDown()
     {
-        Debug.Log(transform.name);
+        if(isPlaceable){
+            Debug.Log(transform.name);
+        }
     }
 }
