@@ -10,13 +10,12 @@ public class EnemyMover : MonoBehaviour
     void Start()
     {
         Debug.Log("Start here");
-        StartCoroutine(FollowPath());
-        Debug.Log("Finishing start");
+        StartCoroutine(FollowPath()); // async.
+        Debug.Log("Finishing start"); // executes before coroutine finishes.
     }
 
     IEnumerator FollowPath(){
         foreach(Waypoint waypoint in path){
-            Debug.Log(waypoint.name);
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(1f);
         }
