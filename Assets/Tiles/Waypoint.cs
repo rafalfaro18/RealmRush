@@ -10,7 +10,6 @@ public class Waypoint : MonoBehaviour
     void OnMouseDown()
     {
         if(isPlaceable){
-            Debug.Log(transform.name);
             Instantiate(towerPrefab, transform.position, Quaternion.identity);
         }
     }
