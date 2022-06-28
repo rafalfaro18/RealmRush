@@ -5,23 +5,18 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] float spawnTimer = 1f;
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DeployEnemies()); // async.
+        StartCoroutine(SpawnEnemy()); // async.
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    IEnumerator DeployEnemies(){
+    IEnumerator SpawnEnemy(){
         while(true){
-            Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
+            Instantiate(enemyPrefab, transform);
+            yield return new WaitForSeconds(spawnTimer);
         }
     }
 }
