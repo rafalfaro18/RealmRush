@@ -19,8 +19,16 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    void OnParticleCollision(GameObject other) {
+    void OnParticleCollision(GameObject other)
+    {
+        ProcessHit();
+    }
+
+    void ProcessHit()
+    {
         currentHitPoints--;
-        Debug.Log("Particle Hit. Health: " + currentHitPoints);
+        if (currentHitPoints <= 0){
+            Destroy(gameObject);
+        }
     }
 }
