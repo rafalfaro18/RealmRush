@@ -26,6 +26,13 @@ public class CoordinateLabeler : MonoBehaviour
         }
 
         ColorCoordinates();
+        ToggleLabels();
+    }
+
+    void ToggleLabels(){
+        if (Input.GetKeyDown(KeyCode.C)){
+            label.enabled = !label.IsActive();
+        }
     }
 
     void ColorCoordinates(){
