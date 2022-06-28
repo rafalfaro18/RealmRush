@@ -10,9 +10,18 @@ public class EnemyMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start here");
+        FindPath();
         StartCoroutine(FollowPath()); // async.
-        Debug.Log("Finishing start"); // executes before coroutine finishes.
+    }
+
+    void FindPath(){
+        path.Clear();
+
+        GameObject parent = GameObject.FindGameObjectWithTag("Path");
+
+        foreach(Transform child in parent.transform) {
+            path.Add(child.GetComponent<Waypoint>());
+        }
     }
 
     IEnumerator FollowPath(){
