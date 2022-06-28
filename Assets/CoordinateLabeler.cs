@@ -16,7 +16,7 @@ public class CoordinateLabeler : MonoBehaviour
     
     void Update()
     {
-        if(!Application.isPlaying){
+        if(!Application.isPlaying){ // Only if not in game.
             DisplayCoordinates();
             UpdateObjectName();
         }
