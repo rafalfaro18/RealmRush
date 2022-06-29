@@ -25,6 +25,7 @@ public class CoordinateLabeler : MonoBehaviour
         if(!Application.isPlaying){ // Only if not in game.
             DisplayCoordinates();
             UpdateObjectName();
+            label.enabled = true;
         }
 
         SetLabelColor();
