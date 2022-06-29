@@ -22,7 +22,12 @@ public class Bank : MonoBehaviour
 
         if(currentBalance < 0){
             // Lose the game.
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ReloadScene();
         }
+    }
+
+    void ReloadScene(){
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
     }
 }
