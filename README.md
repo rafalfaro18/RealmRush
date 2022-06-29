@@ -6,4 +6,4 @@ Unity demo based on course https://www.udemy.com/course/unitycourse2 Section 5
 - C = Toggle tiles coordinates
 
 ## Notes
-- Move CoordinateLabeler script to the Editor folder before building the project.
+- TODO: Move CoordinateLabeler script to the Editor folder before building the project.
