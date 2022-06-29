@@ -26,7 +26,11 @@ public class EnemyMover : MonoBehaviour
         GameObject parent = GameObject.FindGameObjectWithTag("Path");
 
         foreach(Transform child in parent.transform) {
-            path.Add(child.GetComponent<Waypoint>());
+            Waypoint waypoint = child.GetComponent<Waypoint>();
+            
+            if(waypoint != null){
+                path.Add(waypoint);
+            }
         }
     }
 
@@ -34,8 +38,16 @@ public class EnemyMover : MonoBehaviour
         transform.position = path[0].transform.position;
     }
 
-    IEnumerator FollowPath(){
-        foreach(Waypoint waypoint in path){
+    void FinishPath()
+    {
+        enemy.StealGold();
+        gameObject.SetActive(false);
+    }
+
+    IEnumerator FollowPath()
+    {
+        foreach (Waypoint waypoint in path)
+        {
             Vector3 startPosition = transform.position;
             Vector3 endPosition = waypoint.transform.position;
             float travelPercent = 0f;
@@ -43,14 +55,15 @@ public class EnemyMover : MonoBehaviour
             transform.LookAt(endPosition);
 
             // LERP (Linear Interpolation).
-            while(travelPercent < 1f){
+            while (travelPercent < 1f)
+            {
                 travelPercent += Time.deltaTime * speed;
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                 yield return new WaitForEndOfFrame();
             }
         }
-        
-        enemy.StealGold();
-        gameObject.SetActive(false);
+
+        FinishPath();
     }
+
 }
