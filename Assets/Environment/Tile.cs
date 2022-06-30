@@ -14,9 +14,7 @@ public class Tile : MonoBehaviour
 
     void Awake(){
         gridManager = FindObjectOfType<GridManager>();
-    }
 
-    void Start(){
         if (gridManager != null) {
             coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
 
@@ -24,6 +22,10 @@ public class Tile : MonoBehaviour
                 gridManager.BlockNode(coordinates);
             }
         }
+    }
+
+    void Start(){
+        
     }
     
     void OnMouseDown()
