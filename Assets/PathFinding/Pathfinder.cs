@@ -64,7 +64,7 @@ public class Pathfinder : MonoBehaviour
     void BreathFirstSearch(){
         startNode.isWalkable = true;
         destinationNode.isWalkable = true;
-        
+
         frontier.Clear();
         reached.Clear();
 
@@ -118,6 +118,10 @@ public class Pathfinder : MonoBehaviour
 
         return false;
 
+    }
+
+    public void NotifyReceivers(){
+        BroadcastMessage("RecalculatePath", SendMessageOptions.DontRequireReceiver);
     }
 
 }
