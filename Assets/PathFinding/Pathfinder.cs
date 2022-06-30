@@ -23,13 +23,13 @@ public class Pathfinder : MonoBehaviour
         if(gridManager != null) {
             grid = gridManager.Grid;
         }
-
-        startNode = new Node(startCoordinates, true);
-        destinationNode = new Node(destinationCoordinates, true);
     }
 
     void Start()
     {
+        startNode = gridManager.Grid[startCoordinates];
+        destinationNode = gridManager.Grid[destinationCoordinates];
+
         BreathFirstSearch();
     }
 
