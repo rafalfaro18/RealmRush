@@ -8975,7 +8975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bce060a1919e46fd85f07362dcdc767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 4, y: 3}
+  gridSize: {x: 5, y: 5}
 --- !u!4 &888591062
 Transform:
   m_ObjectHideFlags: 0
@@ -15307,11 +15307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b744da4e1f20a49d5abfd5875eca8e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSearchNode:
-    coordinates: {x: 2, y: 1}
-    isWalkable: 0
-    isExplored: 0
-    isPath: 0
+  startCoordinates: {x: 0, y: 0}
+  destinationCoordinates: {x: 3, y: 2}
 --- !u!1 &1636833501
 GameObject:
   m_ObjectHideFlags: 0
