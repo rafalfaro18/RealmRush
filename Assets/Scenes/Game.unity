@@ -8975,7 +8975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bce060a1919e46fd85f07362dcdc767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 5, y: 5}
+  gridSize: {x: 10, y: 10}
+  unityGridSize: 10
 --- !u!4 &888591062
 Transform:
   m_ObjectHideFlags: 0
@@ -20885,6 +20886,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3842799186179695584, guid: 5720ed25f42c94ce989bcb63ecc00f34, type: 3}
+      propertyPath: poolSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3842799186179695584, guid: 5720ed25f42c94ce989bcb63ecc00f34, type: 3}
       propertyPath: spawnTimer
       value: 2.5
